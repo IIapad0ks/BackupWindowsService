@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupService", "BackupService\BackupService.csproj", "{478746E0-EE1C-483E-92E0-DFFFFE46B9CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupManager", "Backupper\BackupManager.csproj", "{CDE2FEC1-CE83-4EDC-B201-7FA4BEF7A43D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{846A7D5D-16CD-43BF-8D37-AA7A738545C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupScheduler", "BackupScheduler\BackupScheduler.csproj", "{6E3EFC8D-238C-4134-BD96-536BFB01E3DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{478746E0-EE1C-483E-92E0-DFFFFE46B9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{478746E0-EE1C-483E-92E0-DFFFFE46B9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{478746E0-EE1C-483E-92E0-DFFFFE46B9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{478746E0-EE1C-483E-92E0-DFFFFE46B9CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE2FEC1-CE83-4EDC-B201-7FA4BEF7A43D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE2FEC1-CE83-4EDC-B201-7FA4BEF7A43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE2FEC1-CE83-4EDC-B201-7FA4BEF7A43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE2FEC1-CE83-4EDC-B201-7FA4BEF7A43D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{846A7D5D-16CD-43BF-8D37-AA7A738545C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846A7D5D-16CD-43BF-8D37-AA7A738545C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846A7D5D-16CD-43BF-8D37-AA7A738545C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846A7D5D-16CD-43BF-8D37-AA7A738545C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E3EFC8D-238C-4134-BD96-536BFB01E3DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E3EFC8D-238C-4134-BD96-536BFB01E3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E3EFC8D-238C-4134-BD96-536BFB01E3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E3EFC8D-238C-4134-BD96-536BFB01E3DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
