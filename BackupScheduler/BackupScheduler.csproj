@@ -45,7 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Backupper\BackupManager.csproj">
+    <ProjectReference Include="..\BackupManager\BackupManager.csproj">
       <Project>{cde2fec1-ce83-4edc-b201-7fa4bef7a43d}</Project>
       <Name>BackupManager</Name>
     </ProjectReference>
