@@ -8,6 +8,7 @@ namespace Core.Settings
 {
     public interface IBackupSchedulerSettings
     {
+        bool UploadBackup { get; }
         int BackupSequence { get; }
     }
 }

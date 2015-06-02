@@ -1,7 +1,9 @@
-﻿using Castle.Windsor;
-using Castle.Windsor.Installer;
+﻿using CastleRegistration = Castle.MicroKernel.Registration;
+using Castle.Windsor;
+using Core.Managers;
 using Core.Schedulers;
 using Core.Services;
+using Core.Settings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +25,7 @@ namespace BackupService
         public BackupService()
         {
             InitializeComponent();
+            this.InitializeIoC();
 
             this.BackupScheduler = this.iocCotainer.Resolve<IBackupScheduler>();
         }
@@ -40,7 +43,11 @@ namespace BackupService
         protected void InitializeIoC()
         {
             this.iocCotainer = new WindsorContainer();
-            this.iocCotainer.Install(FromAssembly.InThisApplication());
+            this.iocCotainer.Register(CastleRegistration.Component.For<IBackupScheduler>().ImplementedBy<BackupScheduler.BackupScheduler>());
+            this.iocCotainer.Register(CastleRegistration.Component.For<IBackupSchedulerSettings>().ImplementedBy<BackupScheduler.BackupSchedulerSettings>());
+            this.iocCotainer.Register(CastleRegistration.Component.For<IBackupManager>().ImplementedBy<BackupManager.BackupManager>());
+            this.iocCotainer.Register(CastleRegistration.Component.For<IBackupSettings>().ImplementedBy<BackupManager.BackupSettings>());
+            this.iocCotainer.Register(CastleRegistration.Component.For<IAmazonS3Settings>().ImplementedBy<BackupManager.AmazonS3Settings>());
         }
     }
 }

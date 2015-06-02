@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BackupManager
 {
-    class BackupSettings : IBackupSettings
+    public class BackupSettings : IBackupSettings
     {
         public string ServerName
         {

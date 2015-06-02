@@ -26,7 +26,14 @@ namespace BackupScheduler
 
         private void timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            this.backupManager.BackupAndUpload();
+            if (this.backupSchedulerSettings.UploadBackup)
+            {
+                this.backupManager.BackupAndUpload();
+            }
+            else
+            {
+                this.backupManager.Backup();
+            }
         }
 
         public void Start()

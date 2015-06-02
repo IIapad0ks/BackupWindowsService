@@ -1,4 +1,5 @@
-﻿using Amazon.S3;
+﻿using Amazon;
+using Amazon.S3;
 using Amazon.S3.Model;
 using Core.Managers;
 using Core.Settings;
@@ -27,24 +28,33 @@ namespace BackupManager
         {
             Server backupServer = new Server(this.backupSettings.ServerName);
             backupServer.ConnectionContext.LoginSecure = this.backupSettings.LoginSecure;
-            backupServer.ConnectionContext.Login = this.backupSettings.Login;
-            backupServer.ConnectionContext.Password = this.backupSettings.Password;
+            if (!this.backupSettings.LoginSecure)
+            {
+                backupServer.ConnectionContext.Login = this.backupSettings.Login;
+                backupServer.ConnectionContext.Password = this.backupSettings.Password;
+            }
             backupServer.ConnectionContext.Connect();
 
             Backup backup = new Backup();
             backup.Action = BackupActionType.Database;
             backup.Database = this.backupSettings.DatabaseName;
             backup.Devices.AddDevice(this.backupSettings.BackupPath, DeviceType.File);
-            backup.Initialize = false;
+            backup.Initialize = true;
             backup.SqlBackup(backupServer);
 
             if (backupServer.ConnectionContext.IsOpen)
                 backupServer.ConnectionContext.Disconnect();
         }
 
-        public void Upload()
+        public void BackupAndUpload()
         {
-            AmazonS3Client amazonClient = new AmazonS3Client(this.amazonSettings.AccessKey, this.amazonSettings.SecretAccessKey);
+            this.Backup();
+            this.Upload();
+        }
+
+        private void Upload()
+        {
+            AmazonS3Client amazonClient = new AmazonS3Client(this.amazonSettings.AccessKey, this.amazonSettings.SecretAccessKey, RegionEndpoint.EUCentral1);
 
             var request = new PutObjectRequest
             {
@@ -59,12 +69,6 @@ namespace BackupManager
             {
                 File.Delete(this.backupSettings.BackupPath);
             }
-        }
-
-        public void BackupAndUpload()
-        {
-            this.Backup();
-            this.Upload();
         }
     }
 }

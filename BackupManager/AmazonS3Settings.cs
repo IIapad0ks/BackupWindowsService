@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Settings
+namespace BackupManager
 {
     public class AmazonS3Settings : IAmazonS3Settings
     {
