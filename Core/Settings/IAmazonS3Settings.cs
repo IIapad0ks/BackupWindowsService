@@ -11,5 +11,6 @@ namespace Core.Settings
         string AccessKey { get; }
         string SecretAccessKey { get; }
         string BucketName { get; }
+        string ServiceURL { get; }
     }
 }

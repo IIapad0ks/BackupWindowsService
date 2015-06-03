@@ -72,7 +72,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AmazonS3Settings.cs" />
     <Compile Include="BackupManager.cs" />
     <Compile Include="BackupSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

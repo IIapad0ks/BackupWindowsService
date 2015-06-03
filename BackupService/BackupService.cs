@@ -48,7 +48,7 @@ namespace BackupService
             this.iocCotainer.Register(CastleRegistration.Component.For<IBackupManager>().ImplementedBy<BackupManager.BackupManager>());
             this.iocCotainer.Register(CastleRegistration.Component.For<IBackupSettings>().ImplementedBy<BackupManager.BackupSettings>());
             this.iocCotainer.Register(CastleRegistration.Component.For<IAmazonS3Client>().ImplementedBy<AmazonClient.AmazonS3Client>());
-            this.iocCotainer.Register(CastleRegistration.Component.For<IAmazonS3Settings>().ImplementedBy<BackupManager.AmazonS3Settings>());
+            this.iocCotainer.Register(CastleRegistration.Component.For<IAmazonS3Settings>().ImplementedBy<AmazonClient.AmazonS3Settings>());
         }
     }
 }

@@ -19,7 +19,7 @@ namespace AmazonClient
         public AmazonS3Client(IAmazonS3Settings amazonSettings)
         {
             this.amazonSettings = amazonSettings;
-            this.client = new S3.AmazonS3Client(this.amazonSettings.AccessKey, this.amazonSettings.SecretAccessKey, RegionEndpoint.EUCentral1);
+            this.client = new S3.AmazonS3Client(this.amazonSettings.AccessKey, this.amazonSettings.SecretAccessKey, new S3.AmazonS3Config { ServiceURL = this.amazonSettings.ServiceURL });
         }
 
         public void PutFile(string filePath, string key)

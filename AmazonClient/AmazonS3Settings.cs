@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BackupManager
+namespace AmazonClient
 {
     public class AmazonS3Settings : IAmazonS3Settings
     {
@@ -31,6 +31,14 @@ namespace BackupManager
             get
             {
                 return ConfigurationManager.AppSettings["AmazonS3BucketName"];
+            }
+        }
+
+        public string ServiceURL
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["AmazonS3ServiceURL"];
             }
         }
     }
