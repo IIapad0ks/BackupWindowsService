@@ -26,11 +26,19 @@ namespace BackupManager
             }
         }
 
-        public string BackupPath
+        public string BackupDirectory
         {
             get
             {
-                return ConfigurationManager.AppSettings["BackupPath"];
+                return ConfigurationManager.AppSettings["BackupDirectory"];
+            }
+        }
+
+        public string BackupName
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["BackupName"];
             }
         }
 
@@ -64,6 +72,22 @@ namespace BackupManager
             get 
             {
                 return ConfigurationManager.AppSettings["RestoreLocalBackup"].ToLower() == "true";
+            }
+        }
+
+        public ulong BackupLifetime
+        {
+            get
+            {
+                return ulong.Parse(ConfigurationManager.AppSettings["BackupLifetime"]);
+            }
+        }
+
+        public bool UploadBackup
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["UploadBackup"].ToLower() == "true";
             }
         }
     }

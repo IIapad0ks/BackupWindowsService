@@ -10,19 +10,20 @@ namespace BackupScheduler
 {
     public class BackupSchedulerSettings : IBackupSchedulerSettings
     {
-        public int BackupSequence
+        public ulong BackupSequence
         {
             get
             {
-                return int.Parse(ConfigurationManager.AppSettings["BackupSequence"]);
+                return ulong.Parse(ConfigurationManager.AppSettings["BackupSequence"]);
             }
         }
 
-        public bool UploadBackup
+
+        public bool InstantBackup
         {
             get
             {
-                return ConfigurationManager.AppSettings["UploadBackup"].ToLower() == "true";
+                return ConfigurationManager.AppSettings["InstantBackup"].ToLower() == "true";
             }
         }
     }

@@ -10,7 +10,10 @@ namespace Core.Settings
     {
         string ServerName { get; }
         string DatabaseName { get; }
-        string BackupPath { get; }
+        string BackupDirectory { get; }
+        string BackupName { get; }
+        ulong BackupLifetime { get; }
+        bool UploadBackup { get; }
         bool RestoreLocalBackup { get; }
 
         bool LoginSecure { get; }

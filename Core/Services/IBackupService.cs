@@ -7,8 +7,5 @@ using System.Threading.Tasks;
 
 namespace Core.Services
 {
-    public interface IBackupService
-    {
-        IBackupScheduler BackupScheduler { get; set; }
-    }
+    public interface IBackupService { }
 }

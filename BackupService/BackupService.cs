@@ -1,5 +1,6 @@
 ﻿using CastleRegistration = Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using Core.Clients;
 using Core.Managers;
 using Core.Schedulers;
 using Core.Services;
@@ -19,8 +20,7 @@ namespace BackupService
     public partial class BackupService : ServiceBase, IBackupService
     {
         private WindsorContainer iocCotainer;
-
-        public IBackupScheduler BackupScheduler { get; set; }
+        private IBackupScheduler BackupScheduler { get; set; }
 
         public BackupService()
         {
@@ -47,6 +47,7 @@ namespace BackupService
             this.iocCotainer.Register(CastleRegistration.Component.For<IBackupSchedulerSettings>().ImplementedBy<BackupScheduler.BackupSchedulerSettings>());
             this.iocCotainer.Register(CastleRegistration.Component.For<IBackupManager>().ImplementedBy<BackupManager.BackupManager>());
             this.iocCotainer.Register(CastleRegistration.Component.For<IBackupSettings>().ImplementedBy<BackupManager.BackupSettings>());
+            this.iocCotainer.Register(CastleRegistration.Component.For<IAmazonS3Client>().ImplementedBy<AmazonClient.AmazonS3Client>());
             this.iocCotainer.Register(CastleRegistration.Component.For<IAmazonS3Settings>().ImplementedBy<BackupManager.AmazonS3Settings>());
         }
     }

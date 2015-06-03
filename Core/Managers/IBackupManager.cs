@@ -10,6 +10,5 @@ namespace Core.Managers
     public interface IBackupManager
     {
         void Backup();
-        void BackupAndUpload();
     }
 }

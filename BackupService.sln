@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupScheduler", "BackupScheduler\BackupScheduler.csproj", "{6E3EFC8D-238C-4134-BD96-536BFB01E3DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonClient", "AmazonClient\AmazonClient.csproj", "{D7B11E34-D70F-4BE3-9B4F-45B0C50D9443}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6E3EFC8D-238C-4134-BD96-536BFB01E3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E3EFC8D-238C-4134-BD96-536BFB01E3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E3EFC8D-238C-4134-BD96-536BFB01E3DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7B11E34-D70F-4BE3-9B4F-45B0C50D9443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7B11E34-D70F-4BE3-9B4F-45B0C50D9443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7B11E34-D70F-4BE3-9B4F-45B0C50D9443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7B11E34-D70F-4BE3-9B4F-45B0C50D9443}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
